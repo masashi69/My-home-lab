@@ -32,12 +32,13 @@ default_fontsize = 16;
       Win10Note [address = "10.0.0.1"];
       DHCPSV [address = "10.0.0.100"];
       kali [address = "10.0.0.2"];
+      "Firefly III" [address = "10.0.0.3"];
 
       group Notbuild { 
         color = lightblue;
         
-        metasploitable [address = "10.0.0.3"];
-        wordpress [address = "10.0.0.4"];
+        metasploitable [address = "10.0.0.X"];
+        wordpress [address = "10.0.0.X"];
       } 
   }
 
