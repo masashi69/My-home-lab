@@ -8,15 +8,15 @@ default_fontsize = 16;
       address = "192.168.0.0/24"
 
       RT [address = "192.168.0.1"];
-      Windows10 [address = "192.168.0.23"];
-      Ubuntu18.04 [address = "192.168.0.10"];
-      RaspberryNAS [address = "192.168.0.19"];
-      Win10Note [address = "192.168.0.12"]
+      Windows10 [address = ".23"];
+      Ubuntu18.04 [address = ".10"];
+      RaspberryNAS [address = ".19"];
+      Win10Note [address = ".12"]
       
       group Dead {
         color = lightgray
 
-        TVRecodeSV [address = "192.168.0.13"];
+        TVRecodeSV [address = ".13"];
       } 
   }
 
