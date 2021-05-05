@@ -9,9 +9,11 @@ default_fontsize = 16;
 
       RT [address = "192.168.0.1"];
       Windows10 [address = ".23"];
-      Ubuntu18.04 [address = ".10"];
+      Ubuntu20.04 [address = ".10"];
       RaspberryNAS [address = ".19"];
-      Win10Note [address = ".12"]
+      Win10Note [address = ".12"];
+      pfSense [address = ".101"];
+      Mobile [address = ".X"]
       
       group Dead {
         color = lightgray
@@ -20,20 +22,20 @@ default_fontsize = 16;
       } 
   }
 
-  network NATNW {
-      address = "10.0.3.0/24"
-      Win10Note ;
-      kali ;
-      
-  }
+ 
+  network LXDNW { 
+      Ubuntu20.04;
+      "Firefly III";
+      Dokuwiki
+    }
+
 
   network VirtualboxNW {
       address = "10.0.0.0/24"
 
-      Win10Note [address = "10.0.0.1"];
-      DHCPSV [address = "10.0.0.100"];
       kali [address = "10.0.0.2"];
-      "Firefly III" [address = "10.0.0.3"];
+      pfSense [address = "10.0.0.254"];
+      "Firefly III\ntest" [address = "10.0.0.3"];
 
       group Notbuild { 
         color = lightblue;
