@@ -1,5 +1,5 @@
 nwdiag {
-default_fontsize = 16;
+default_fontsize = 14;
 
   Internet [shape=cloud]
   Internet -- RT
@@ -8,41 +8,38 @@ default_fontsize = 16;
       address = "192.168.0.0/24"
 
       RT [address = "192.168.0.1"];
-      Windows10 [address = ".23"];
-      Ubuntu20.04 [address = ".10"];
+      Windows10 [address = ".20"];
       RaspberryNAS [address = ".19"];
-      Win10Note [address = ".12"];
+      Win10Note [address = ".24"];
       pfSense [address = ".101"];
       Mobile [address = ".X"]
       
-      group Dead {
-        color = lightgray
-
-        TVRecodeSV [address = ".13"];
-      } 
+      # group Dead {
+      #   color = lightgray
+      #   TVRecodeSV [address = ".13"];
+      # } 
   }
 
  
-  network LXDNW { 
-      Ubuntu20.04;
-      "Firefly III";
-      Dokuwiki
+  network "Lab NW" { 
+      address = "10.0.1.0/24";
+      pfSense [address = ".254"];
+      ubuntu1 [address = ".1"];
+      ubuntu2 [address = ".2"];
     }
 
+  network "docker swarm NW" { 
+      address = "10.254.0.0/24";
+      ubuntu1 [address = ".1"];
+      ubuntu2 [address = ".2"];
+    }
 
-  network VirtualboxNW {
-      address = "10.0.0.0/24"
-
-      kali [address = "10.0.0.2"];
-      pfSense [address = "10.0.0.254"];
-      "Firefly III\ntest" [address = "10.0.0.3"];
-
-      group Notbuild { 
-        color = lightblue;
-        
-        metasploitable [address = "10.0.0.X"];
-        wordpress [address = "10.0.0.X"];
-      } 
-  }
+  network "docker\ncontainer NW" { 
+      ubuntu1 ;
+      ubuntu2 ;
+      portainer ;
+      FireflyIII ;
+      Pi-hole ;
+    }
 
 }
