@@ -24,19 +24,23 @@ default_fontsize = 14;
   network "Lab NW" { 
       address = "10.0.1.0/24";
       pfSense [address = ".254"];
-      ubuntu1 [address = ".1"];
-      ubuntu2 [address = ".2"];
+      group swarm {
+      color = "#88ddf2"
+          docker1 [address = ".1"];
+          docker2 [address = ".2"];
+      }
+      "monitor\nserver" [address = ".3"];
     }
 
   network "docker swarm NW" { 
       address = "10.254.0.0/24";
-      ubuntu1 [address = ".1"];
-      ubuntu2 [address = ".2"];
+      docker1 [address = ".1"];
+      docker2 [address = ".2"];
     }
 
   network "docker\ncontainer NW" { 
-      ubuntu1 ;
-      ubuntu2 ;
+      docker1 ;
+      docker2 ;
       portainer ;
       FireflyIII ;
       Pi-hole ;
