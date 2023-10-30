@@ -1,5 +1,6 @@
 nwdiag {
 default_fontsize = 14;
+containers [stacked];
 
     Internet [shape=cloud]
     Internet -- RT
@@ -11,6 +12,7 @@ default_fontsize = 14;
         Windows10 [address = ".20"];
         RaspberryNAS [address = ".19"];
         Win10Note [address = ".24"];
+        ubuntu22.04 [address = ".29"];
         pfSense [address = ".101"];
         Mobile [address = ".X"]
 
@@ -18,6 +20,11 @@ default_fontsize = 14;
         #   color = lightgray
         #   TVRecodeSV [address = ".13"];
         # }
+    }
+
+    network "Lab Staging" {
+        ubuntu22.04;
+        dev-containers;
     }
 
     network "Lab NW" {
@@ -40,9 +47,7 @@ default_fontsize = 14;
     network "docker\ncontainer NW" {
         docker1 ;
         docker2 ;
-        portainer ;
-        FireflyIII ;
-        Pi-hole ;
+        containers ;
       }
 
 }
