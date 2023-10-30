@@ -1,49 +1,48 @@
 nwdiag {
 default_fontsize = 14;
 
-  Internet [shape=cloud]
-  Internet -- RT
-  
-  network HomeNW {
-      address = "192.168.0.0/24"
+    Internet [shape=cloud]
+    Internet -- RT
 
-      RT [address = "192.168.0.1"];
-      Windows10 [address = ".20"];
-      RaspberryNAS [address = ".19"];
-      Win10Note [address = ".24"];
-      pfSense [address = ".101"];
-      Mobile [address = ".X"]
-      
-      # group Dead {
-      #   color = lightgray
-      #   TVRecodeSV [address = ".13"];
-      # } 
-  }
+    network HomeNW {
+        address = "192.168.0.0/24"
 
- 
-  network "Lab NW" { 
-      address = "10.0.1.0/24";
-      pfSense [address = ".254"];
-      group swarm {
-      color = "#88ddf2"
-          docker1 [address = ".1"];
-          docker2 [address = ".2"];
+        RT [address = "192.168.0.1"];
+        Windows10 [address = ".20"];
+        RaspberryNAS [address = ".19"];
+        Win10Note [address = ".24"];
+        pfSense [address = ".101"];
+        Mobile [address = ".X"]
+
+        # group Dead {
+        #   color = lightgray
+        #   TVRecodeSV [address = ".13"];
+        # }
+    }
+
+    network "Lab NW" {
+        address = "10.0.1.0/24";
+        pfSense [address = ".254"];
+        group swarm {
+        color = "#88ddf2"
+            docker1 [address = ".1"];
+            docker2 [address = ".2"];
+        }
+        "monitor\nserver" [address = ".3"];
       }
-      "monitor\nserver" [address = ".3"];
-    }
 
-  network "docker swarm NW" { 
-      address = "10.254.0.0/24";
-      docker1 [address = ".1"];
-      docker2 [address = ".2"];
-    }
+    network "docker swarm NW" {
+        address = "10.254.0.0/24";
+        docker1 [address = ".1"];
+        docker2 [address = ".2"];
+      }
 
-  network "docker\ncontainer NW" { 
-      docker1 ;
-      docker2 ;
-      portainer ;
-      FireflyIII ;
-      Pi-hole ;
-    }
+    network "docker\ncontainer NW" {
+        docker1 ;
+        docker2 ;
+        portainer ;
+        FireflyIII ;
+        Pi-hole ;
+      }
 
 }
