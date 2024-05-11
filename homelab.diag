@@ -11,7 +11,7 @@ containers [stacked];
         RT [address = "192.168.0.1"];
         Windows10 [address = ".20"];
         RaspberryNAS [address = ".19"];
-        Win10Note [address = ".24"];
+        "lab host" [address = ".24"];
         ubuntu22.04 [address = ".29"];
         pfSense [address = ".101"];
         Mobile [address = ".X"]
@@ -34,19 +34,22 @@ containers [stacked];
         color = "#88ddf2"
             docker1 [address = ".1"];
             docker2 [address = ".2"];
+            docker3 [address = ".3"];
         }
-        "monitor\nserver" [address = ".3"];
+        "monitor\nserver" [address = ".11"];
       }
 
     network "docker swarm NW" {
         address = "10.254.0.0/24";
         docker1 [address = ".1"];
         docker2 [address = ".2"];
+        docker3 [address = ".3"];
       }
 
     network "docker\ncontainer NW" {
         docker1 ;
         docker2 ;
+        docker3 ;
         containers ;
       }
 
