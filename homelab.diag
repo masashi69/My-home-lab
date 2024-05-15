@@ -37,6 +37,7 @@ containers [stacked];
             docker3 [address = ".3"];
         }
         "monitor\nserver" [address = ".11"];
+        docker-stg [address = ".21"];
       }
 
     network "docker swarm NW" {
