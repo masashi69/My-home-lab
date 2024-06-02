@@ -22,7 +22,7 @@ containers [stacked];
         # }
     }
 
-    network "Lab Staging" {
+    network "Lab develop" {
         ubuntu22.04;
         dev-containers;
     }
@@ -54,4 +54,8 @@ containers [stacked];
         containers ;
       }
 
+    network "docker\nstaging NW" {
+        docker-stg ;
+        stg-containers ;
+      }
 }
