@@ -30,6 +30,7 @@ containers [stacked];
     network "Lab NW" {
         address = "10.0.1.0/24";
         pfSense [address = ".254"];
+        haproxy [address = ".100"];
         group swarm {
         color = "#88ddf2"
             docker1 [address = ".1"];
