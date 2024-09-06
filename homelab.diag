@@ -39,6 +39,7 @@ containers [stacked];
         }
         "monitor\nserver" [address = ".11"];
         docker-stg [address = ".21"];
+        "NAS\nOMV" [address = ".31"];
       }
 
     network "docker swarm NW" {
