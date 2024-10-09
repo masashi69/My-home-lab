@@ -13,6 +13,7 @@ containers [stacked];
         RaspberryNAS [address = ".19"];
         "lab host" [address = ".24"];
         ubuntu22.04 [address = ".29"];
+        guacamole [address = ".36"];
         pfSense [address = ".101"];
         Mobile [address = ".X"]
 
